@@ -7,10 +7,11 @@ directives but with advantages being that it's less code and potentially faster 
 class term_data
 {
 public:
-	term_data() { name = ""; definition = ""; year_used = 0; };
+	term_data() { name = ""; definition = ""; year_used = 0; next = nullptr; };
 	term_data(std::string n, std::string def, int year) { name = n; definition = def; year_used = year; };
 	void print_term_data();
-	void search_term(std::string n);
+	bool search_term(std::string n);
+	term_data* get_next() { return next; };
 private:
 	std::string name;
 	std::string definition;
@@ -18,10 +19,15 @@ private:
 	term_data* next;
 };
 
-class node
+class linked_list
 {
 public:
-	void add_term();
-	void print_term_info();
-	void search_term();
+	linked_list() { head = nullptr; };
+	~linked_list();
+	void print_linked_list();
+	void add_node(std::string n, std::string def, int year);
+	void find_node(std::string n);
+private:
+	term_data data;
+	term_data* head;
 };
