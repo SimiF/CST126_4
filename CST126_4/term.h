@@ -9,8 +9,11 @@ class term_data
 public:
 	term_data() { name = ""; definition = ""; year_used = 0; next = nullptr; };
 	term_data(std::string n, std::string def, int year) { name = n; definition = def; year_used = year; };
+	std::string get_name() { return name; };
 	void print_term_data();
+	void print_searched_term();
 	bool search_term(std::string n);
+	void update_next(term_data* ptr) { next = ptr; };
 	term_data* get_next() { return next; };
 private:
 	std::string name;
@@ -28,6 +31,5 @@ public:
 	void add_node(std::string n, std::string def, int year);
 	void find_node(std::string n);
 private:
-	term_data data;
 	term_data* head;
 };
