@@ -4,8 +4,6 @@ FlowersHandsOn.cpp as a guide */
 #include "term.h"
 #include <iostream>
 
-bool search_and_print(linked_list* ptr);
-
 int main()
 {
 	linked_list* list = new linked_list();
@@ -21,33 +19,7 @@ int main()
 	list->add_node("Scrum", "Process framework used to manage product development.", 1986);
 		
 	list->print_linked_list();
-	while(search_and_print(list))
+	list->search_and_destroy(list);
 
     return 0;
-}
-
-bool search_and_print(linked_list* ptr)
-{
-	std::cout << std::endl;
-	std::string term;
-	std::cout << "What term do you want? ";
-	std::cin >> term;
-
-	ptr->find_node(term);
-
-	std::cout << std::endl;
-	std::cout << std::endl;
-
-	char answer;
-	std::cout << "Do you want to continue? ";
-	std::cin >> answer;
-
-	if (answer == 'y' || answer == 'Y')
-	{
-		return true;
-	}
-	else if (answer == 'n' || answer == 'N')
-	{
-		return false;
-	}
 }

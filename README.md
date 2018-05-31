@@ -1,12 +1,12 @@
 # CST126_4 - Pulling it all together
 
-**Class ID:** 
+**Class ID:** Vulpix
 
 **Assignement ID:** CST126_4
 
-**Unresolved Issues:**
+**Unresolved Issues:** None.
 
-**Notes:**
+**Notes:** None. Thank you.
 
 
 ---

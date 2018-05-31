@@ -28,7 +28,7 @@ bool term_data::search_term(std::string n)
 
 linked_list::~linked_list()
 {
-	std::cout << "Deleting..." << std::endl;
+	std::cout << "Deleting list." << std::endl;
 
 	term_data* temp;
 	temp = head;
@@ -85,23 +85,53 @@ void linked_list::add_node(std::string n, std::string def, int year)
 	}
 }
 
-void linked_list::find_node(std::string n)
+void linked_list::find_node_and_print(std::string n)
 {
 	term_data* temp;
 	temp = head;
-
-	bool found = false;
+	bool found{ false };
 
 	while (temp != nullptr && found == false)
 	{
-		found = temp->search_term(n);
-		if (found)
+		if(temp->search_term(n))
 		{
 			temp->print_searched_term();
+			found = true;
 		}
 		else
 		{
 			temp = temp->get_next();
+		}
+	}
+}
+
+void linked_list::search_and_destroy(linked_list* ptr)
+{
+	bool loop{ true };
+	while (loop)
+	{
+		std::cout << std::endl;
+		std::string term;
+		std::cout << "What term do you want? ";
+		std::cin >> term;
+
+		ptr->find_node_and_print(term);
+
+		std::cout << std::endl;
+		std::cout << std::endl;
+
+		char answer;
+		std::cout << "Do you want to continue? ";
+		std::cin >> answer;
+
+		if (answer == 'y' || answer == 'Y')
+		{
+			loop = true;
+		}
+		else if (answer == 'n' || answer == 'N')
+		{
+			loop = false;
+			ptr->~linked_list();
 		}
 	}
 }

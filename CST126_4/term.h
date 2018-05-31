@@ -29,7 +29,8 @@ public:
 	~linked_list();
 	void print_linked_list();
 	void add_node(std::string n, std::string def, int year);
-	void find_node(std::string n);
+	void find_node_and_print(std::string n);
+	void search_and_destroy(linked_list* ptr);
 private:
 	term_data* head;
 };
