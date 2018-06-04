@@ -103,6 +103,11 @@ void linked_list::find_node_and_print(std::string n)
 			temp = temp->get_next();
 		}
 	}
+
+	if (found == false)
+	{
+		std::cout << "Your term has not been found." << std::endl;
+	}
 }
 
 void linked_list::search_and_destroy(linked_list* ptr)
@@ -131,7 +136,6 @@ void linked_list::search_and_destroy(linked_list* ptr)
 		else if (answer == 'n' || answer == 'N')
 		{
 			loop = false;
-			ptr->~linked_list();
 		}
 	}
 }
