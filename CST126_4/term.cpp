@@ -31,13 +31,12 @@ linked_list::~linked_list()
 	std::cout << "Deleting list." << std::endl;
 
 	term_data* temp;
-	temp = head;
 
-	while (temp != nullptr)
+	while (head != nullptr)
 	{
-		temp = temp->get_next();
-		delete head;
-		head = temp;
+		temp = head;
+		head = head->get_next();
+		delete temp;
 	}
 }
 
@@ -110,7 +109,7 @@ void linked_list::find_node_and_print(std::string n)
 	}
 }
 
-void linked_list::search_and_destroy(linked_list* ptr)
+void linked_list::search_node(linked_list* ptr)
 {
 	bool loop{ true };
 	while (loop)
