@@ -14,7 +14,7 @@ void term_data::print_searched_term()
 	std::cout << name << ":  " << definition << "  First used in " << year_used << std::endl;
 }
 
-bool term_data::search_term(std::string n)
+bool term_data::search_term(const std::string & n)
 {
 	if (name == n)
 	{
@@ -52,7 +52,7 @@ void linked_list::print_linked_list()
 	}
 }
 
-void linked_list::add_node(std::string n, std::string def, int year)
+void linked_list::add_node(const std::string & n, const std::string & def, const int & year)
 {
 	term_data* temp = new term_data(n, def, year);
 
@@ -84,7 +84,7 @@ void linked_list::add_node(std::string n, std::string def, int year)
 	}
 }
 
-void linked_list::find_node_and_print(std::string n)
+void linked_list::find_node_and_print(const std::string & n)
 {
 	term_data* temp;
 	temp = head;

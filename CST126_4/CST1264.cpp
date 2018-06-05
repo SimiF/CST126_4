@@ -2,7 +2,6 @@
 FlowersHandsOn.cpp as a guide */
 #include "stdafx.h"
 #include "term.h"
-#include <iostream>
 
 int main()
 {
